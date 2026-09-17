@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro — Letícia de Almeida Ferreira dos Santos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="wrap">
+            <a href="#" class="brand">
+                <span class="brand-dot"></span>
+                Pomodoro Letícia
+            </a>
+            <nav class="site-nav">
+                <a href="#timer">Timer</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="timer">
+        <div class="wrap hero-grid">
+            <!-- Coluna esquerda: timer -->
+            <div class="hero-left">
+                <p class="eyebrow">Técnica Pomodoro</p>
+                <h1 class="hero-title">
+                    Foque no agora,<br>
+                    <span class="accent">um ciclo por vez.</span>
+                </h1>
+                <p class="hero-sub">
+                    Alterne entre foco e pausas para manter a mente fresca
+                    e a produtividade alta.
+                </p>
+
+                <div class="modes" id="modes">
+                    <button class="mode active" data-mode="focus">Foco</button>
+                    <button class="mode" data-mode="short">Pausa Curta</button>
+                    <button class="mode" data-mode="long">Pausa Longa</button>
+                </div>
+
+                <div class="timer-section">
+                    <div class="timer" id="timer" data-mode="focus">
+                        <div class="timer-progress" id="timerProgress"></div>
+                        <div class="timer-inner">
+                            <span class="time" id="time">25:00</span>
+                            <span class="label" id="label">Foco</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <aside class="hero-right">
+                <div class="panel">
+                    <h2 class="panel-title">Tempo personalizado</h2>
+                    <p class="panel-sub">Defina a duração em minutos para o modo atual.</p>
+
+                    <div class="custom-input-group">
+                        <input
+                            type="number"
+                            id="customInput"
+                            min="1"
+                            max="120"
+                            placeholder="Ex: 30"
+                        >
+                        <button id="applyBtn" class="apply-btn">Aplicar</button>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <h2 class="panel-title">Controles</h2>
+                    <div class="controls">
+                        <button class="btn btn-primary" id="startBtn">Iniciar</button>
+                        <button class="btn btn-secondary" id="pauseBtn" disabled>Pausar</button>
+                        <button class="btn btn-ghost" id="resetBtn">Resetar</button>
+                    </div>
+                </div>
+
+                <div class="panel stats-panel">
+                    <h2 class="panel-title">Progresso</h2>
+                    <div class="stats">
+                        <div class="stat">
+                            <span class="stat-value" id="pomodoroCount">0</span>
+                            <span class="stat-label">Ciclos</span>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="stat">
+                            <span class="stat-value" id="totalTime">0m</span>
+                            <span class="stat-label">Foco total</span>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="wrap footer-inner">
+            <p class="footer-brand"></p>
+            <p class="footer-credit">
+                Desenvolvido por <strong>Letícia de Almeida Ferreira dos Santos</strong>
+            </p>
+            <p class="footer-year"></p>
+        </div>
+    </footer>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
